@@ -1,0 +1,90 @@
+name: bts
+description: A new Flutter project.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  #https://pub.dev/packages/auto_route/changelog
+  auto_route: 8.0.3
+  #https://pub.dev/packages/cupertino_icons/changelog
+  cupertino_icons: 1.0.6
+  #https://pub.dev/packages/auto_size_text/changelog
+  auto_size_text: 3.0.0
+  #https://pub.dev/packages/flutter_bloc/changelog
+  flutter_bloc: 8.1.5
+  #https://pub.dev/packages/freezed_annotation/changelog
+  freezed_annotation: 2.4.1
+  #https://pub.dev/packages/get_it/changelog
+  get_it: 7.2.0
+  #https://pub.dev/packages/injectable/changelog
+  injectable: 2.2.0
+  #https://pub.dev/packages/json_annotation/changelog
+  json_annotation: 4.8.1
+  #https://pub.dev/packages/logger/changelog
+  logger: 2.2.0
+  #https://pub.dev/packages/retrofit/changelog
+  retrofit: 4.1.0
+  #https://pub.dev/packages/flutter_screenutil/changelog
+  flutter_screenutil: 5.9.0
+  #https://pub.dev/packages/dartz/changelog
+  dartz: 0.10.1
+
+dev_dependencies:
+  #https://pub.dev/packages/auto_route_generator/changelog
+  auto_route_generator: 8.0.0
+  flutter_test:
+    sdk: flutter
+  #https://pub.dev/packages/build_runner/changelog
+  build_runner: 2.4.9
+  #https://pub.dev/packages/flutter_lints/changelog
+  flutter_lints: 3.0.2
+  #https://pub.dev/packages/freezed/changelog
+  freezed: 2.5.1
+  #https://pub.dev/packages/injectable_generator/changelog
+  injectable_generator: 2.2.0
+  #https://pub.dev/packages/json_serializable/changelog
+  json_serializable: 6.7.1
+  #https://pub.dev/packages/retrofit_generator/changelog
+  retrofit_generator: 8.1.0
+
+
+flutter:
+
+  uses-material-design: true
+  assets:
+    - assets/near-you/
+    - assets/icon/
+    - assets/best-for-you/
+  fonts:
+    - family: Ralewat
+      fonts:
+        - asset: assets/fonts/raleway/Raleway-Black.ttf
+        - asset: assets/fonts/raleway/Raleway-BlackItalic.ttf
+        - asset: assets/fonts/raleway/Raleway-Bold.ttf
+        - asset: assets/fonts/raleway/Raleway-BoldItalic.ttf
+        - asset: assets/fonts/raleway/Raleway-ExtraBold.ttf
+        - asset: assets/fonts/raleway/Raleway-ExtraBoldItalic.ttf
+        - asset: assets/fonts/raleway/Raleway-ExtraLight.ttf
+        - asset: assets/fonts/raleway/Raleway-ExtraLightItalic.ttf
+        - asset: assets/fonts/raleway/Raleway-Italic.ttf
+          style: italic
+        - asset: assets/fonts/raleway/Raleway-Light.ttf
+        - asset: assets/fonts/raleway/Raleway-LightItalic.ttf
+        - asset: assets/fonts/raleway/Raleway-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/raleway/Raleway-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/raleway/Raleway-Regular.ttf
+          style: normal
+        - asset: assets/fonts/raleway/Raleway-SemiBold.ttf
+        - asset: assets/fonts/raleway/Raleway-SemiBoldItalic.ttf
+        - asset: assets/fonts/raleway/Raleway-Thin.ttf
+        - asset: assets/fonts/raleway/Raleway-ThinItalic.ttf
