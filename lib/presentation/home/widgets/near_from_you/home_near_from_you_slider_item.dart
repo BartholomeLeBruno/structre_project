@@ -21,6 +21,9 @@ class HomeNearFromYouSliderItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 2,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(DimensionsSystem.radiusR),
+      ),
       child: Container(
         width: 222.w,
         height: 272.h,

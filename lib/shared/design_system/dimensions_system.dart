@@ -8,6 +8,6 @@ class DimensionsSystem {
   static const double xxl = 40.0;
 
   static const double radiusSm = 4.0;
-  static const double radiusMd = 8.0;
-  static const double radiusR = 16.0;
+  static const double radiusMd = 10.0;
+  static const double radiusR = 20.0;
 }
