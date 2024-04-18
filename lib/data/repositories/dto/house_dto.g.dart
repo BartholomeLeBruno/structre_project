@@ -17,14 +17,14 @@ Map<String, dynamic> _$HousesDTOToJson(HousesDTO instance) => <String, dynamic>{
     };
 
 HouseDTO _$HouseDTOFromJson(Map<String, dynamic> json) => HouseDTO(
-      json['id'] as String?,
-      json['imageUrl'] as String?,
-      json['name'] as String?,
-      json['host'] as String?,
-      json['countBedRoom'] as int?,
-      json['countBathRoom'] as int?,
-      json['priceAYear'] as int?,
-      (json['distancy'] as num?)?.toDouble(),
+      id: json['id'] as String?,
+      imageUrl: json['imageUrl'] as String?,
+      name: json['name'] as String?,
+      host: json['host'] as String?,
+      countBedRoom: json['countBedRoom'] as int?,
+      countBathRoom: json['countBathRoom'] as int?,
+      priceAYear: json['priceAYear'] as int?,
+      distancy: (json['distancy'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$HouseDTOToJson(HouseDTO instance) => <String, dynamic>{

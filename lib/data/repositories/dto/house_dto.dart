@@ -24,7 +24,7 @@ class HouseDTO {
   int? priceAYear;
   double? distancy;
 
-  HouseDTO(this.id, this.imageUrl, this.name, this.host, this.countBedRoom, this.countBathRoom, this.priceAYear, this.distancy);
+  HouseDTO({this.id, this.imageUrl, this.name, this.host, this.countBedRoom, this.countBathRoom, this.priceAYear, this.distancy});
 
   factory HouseDTO.fromJson(Map<String, dynamic> json) => _$HouseDTOFromJson(json);
 
