@@ -11,7 +11,7 @@ void main() {
   late HouseRepositoryImpl repository;
 
   setUp(() {
-    houseAPI = HouseMockApi();
+    houseAPI = MockHouseApi();
     repository = HouseRepositoryImpl(houseAPI);
   });
 
