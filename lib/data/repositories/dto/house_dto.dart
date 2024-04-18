@@ -6,7 +6,7 @@ part 'house_dto.g.dart';
 class HousesDTO {
   List<HouseDTO>? houseList;
 
-  HousesDTO(this.houseList);
+  HousesDTO({this.houseList});
 
   factory HousesDTO.fromJson(Map<String, dynamic> json) => _$HousesDTOFromJson(json);
 

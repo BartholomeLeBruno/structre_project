@@ -7,7 +7,7 @@ part of 'house_dto.dart';
 // **************************************************************************
 
 HousesDTO _$HousesDTOFromJson(Map<String, dynamic> json) => HousesDTO(
-      (json['houseList'] as List<dynamic>?)
+      houseList: (json['houseList'] as List<dynamic>?)
           ?.map((e) => HouseDTO.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
