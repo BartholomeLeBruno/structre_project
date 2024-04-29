@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:bts/data/repositories/dto/house_dto.dart';
 import 'package:bts/local/model/best_for_you_house.dart';
+import 'package:bts/local/model/failure.dart';
 import 'package:bts/local/model/near_house.dart';
 
 class HouseMocksForTest {
@@ -215,4 +218,7 @@ class HouseMocksForTest {
         imagePath: "assets/best-for-you/image_best_01.png",
         host: "host"),
   ];
+
+  static JsonUnsupportedObjectError exceptionThrown = JsonUnsupportedObjectError("error", partialResult: "error on json decode");
+  static Failure failure = Failure(error: Error(exceptionMessage: exceptionThrown.partialResult));
 }
