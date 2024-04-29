@@ -51,6 +51,26 @@ void main() {
       ],
     );
     blocTest<HomeCubit, HomeState>(
+      'on style changed '
+      'when no errors occurs',
+      build: () => HomeCubit(getHouseTypesUseCase, getHouseNearYouUseCase, getHouseBestForYouUseCase),
+      seed: () => HomeState(
+        styles: HouseMocksForTest.houseListTypesString,
+        nearHouseList: [],
+        bestForYouHouseList: [],
+        selectedStyle: HouseMocksForTest.houseListTypesString.first,
+      ),
+      act: (cubit) => cubit.onStyleChanged(HouseMocksForTest.houseListTypesString.last),
+      expect: () => [
+        HomeState(
+          styles: HouseMocksForTest.houseListTypesString,
+          nearHouseList: [],
+          bestForYouHouseList: [],
+          selectedStyle: HouseMocksForTest.houseListTypesString.last,
+        ),
+      ],
+    );
+    blocTest<HomeCubit, HomeState>(
       'on get house type usecase to get styles'
       'when error occurs emit failure',
       setUp: () {
