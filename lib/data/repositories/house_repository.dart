@@ -24,20 +24,31 @@ class HouseRepositoryImpl implements HouseRepository {
 
   @override
   Future<Either<Failure, List<String>>> getHouseTypes() async {
-    //var dto = await _houseApi.getHouseTypes();
-    List<dynamic> res = jsonDecode(HouseMock.houseListTypesJson);
-    return Right(res.map((houseType) => houseType.toString()).toList());
+    try {
+      List<dynamic> res = jsonDecode(HouseMock.houseListTypesJson);
+      return Right(res.map((houseType) => houseType.toString()).toList());
+    } on JsonUnsupportedObjectError catch (exception) {
+      return Left(Failure(error: Error(exceptionMessage: exception.partialResult)));
+    }
   }
 
   @override
   Future<Either<Failure, List<NearHouse>>> getHousesNear() async {
     //var dto = await _houseApi.getHousesNear();
-    return Right(HouseMock.nearHouseListJson.map<NearHouse>((e) => NearHouse.fromJson(e)).toList());
+    try {
+      return Right(HouseMock.nearHouseListJson.map<NearHouse>((e) => NearHouse.fromJson(e)).toList());
+    } on JsonUnsupportedObjectError catch (exception) {
+      return Left(Failure(error: Error(exceptionMessage: exception.partialResult)));
+    }
   }
 
   @override
   Future<Either<Failure, List<BestForYouHouse>>> getHousesBest() async {
     //var dto = await _houseApi.getHousesBest();
-    return Right(HouseMock.bestHouseListJson.map<BestForYouHouse>((e) => BestForYouHouse.fromJson(e)).toList());
+    try {
+      return Right(HouseMock.bestHouseListJson.map<BestForYouHouse>((e) => BestForYouHouse.fromJson(e)).toList());
+    } on JsonUnsupportedObjectError catch (exception) {
+      return Left(Failure(error: Error(exceptionMessage: exception.partialResult)));
+    }
   }
 }

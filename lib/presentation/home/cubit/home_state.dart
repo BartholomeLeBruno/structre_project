@@ -1,4 +1,5 @@
 import 'package:bts/local/model/best_for_you_house.dart';
+import 'package:bts/local/model/failure.dart';
 import 'package:bts/local/model/near_house.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -9,6 +10,7 @@ class HomeState with _$HomeState {
   const factory HomeState({
     required List<String> styles,
     String? selectedStyle,
+    Failure? failure,
     required List<NearHouse> nearHouseList,
     required List<BestForYouHouse> bestForYouHouseList,
   }) = _HomeState;

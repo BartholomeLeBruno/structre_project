@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$HomeState {
   List<String> get styles => throw _privateConstructorUsedError;
   String? get selectedStyle => throw _privateConstructorUsedError;
+  Failure? get failure => throw _privateConstructorUsedError;
   List<NearHouse> get nearHouseList => throw _privateConstructorUsedError;
   List<BestForYouHouse> get bestForYouHouseList =>
       throw _privateConstructorUsedError;
@@ -35,8 +36,11 @@ abstract class $HomeStateCopyWith<$Res> {
   $Res call(
       {List<String> styles,
       String? selectedStyle,
+      Failure? failure,
       List<NearHouse> nearHouseList,
       List<BestForYouHouse> bestForYouHouseList});
+
+  $FailureCopyWith<$Res>? get failure;
 }
 
 /// @nodoc
@@ -54,6 +58,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   $Res call({
     Object? styles = null,
     Object? selectedStyle = freezed,
+    Object? failure = freezed,
     Object? nearHouseList = null,
     Object? bestForYouHouseList = null,
   }) {
@@ -66,6 +71,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.selectedStyle
           : selectedStyle // ignore: cast_nullable_to_non_nullable
               as String?,
+      failure: freezed == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure?,
       nearHouseList: null == nearHouseList
           ? _value.nearHouseList
           : nearHouseList // ignore: cast_nullable_to_non_nullable
@@ -75,6 +84,18 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           : bestForYouHouseList // ignore: cast_nullable_to_non_nullable
               as List<BestForYouHouse>,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $FailureCopyWith<$Res>? get failure {
+    if (_value.failure == null) {
+      return null;
+    }
+
+    return $FailureCopyWith<$Res>(_value.failure!, (value) {
+      return _then(_value.copyWith(failure: value) as $Val);
+    });
   }
 }
 
@@ -89,8 +110,12 @@ abstract class _$$HomeStateImplCopyWith<$Res>
   $Res call(
       {List<String> styles,
       String? selectedStyle,
+      Failure? failure,
       List<NearHouse> nearHouseList,
       List<BestForYouHouse> bestForYouHouseList});
+
+  @override
+  $FailureCopyWith<$Res>? get failure;
 }
 
 /// @nodoc
@@ -106,6 +131,7 @@ class __$$HomeStateImplCopyWithImpl<$Res>
   $Res call({
     Object? styles = null,
     Object? selectedStyle = freezed,
+    Object? failure = freezed,
     Object? nearHouseList = null,
     Object? bestForYouHouseList = null,
   }) {
@@ -118,6 +144,10 @@ class __$$HomeStateImplCopyWithImpl<$Res>
           ? _value.selectedStyle
           : selectedStyle // ignore: cast_nullable_to_non_nullable
               as String?,
+      failure: freezed == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure?,
       nearHouseList: null == nearHouseList
           ? _value._nearHouseList
           : nearHouseList // ignore: cast_nullable_to_non_nullable
@@ -136,6 +166,7 @@ class _$HomeStateImpl implements _HomeState {
   const _$HomeStateImpl(
       {required final List<String> styles,
       this.selectedStyle,
+      this.failure,
       required final List<NearHouse> nearHouseList,
       required final List<BestForYouHouse> bestForYouHouseList})
       : _styles = styles,
@@ -152,6 +183,8 @@ class _$HomeStateImpl implements _HomeState {
 
   @override
   final String? selectedStyle;
+  @override
+  final Failure? failure;
   final List<NearHouse> _nearHouseList;
   @override
   List<NearHouse> get nearHouseList {
@@ -171,7 +204,7 @@ class _$HomeStateImpl implements _HomeState {
 
   @override
   String toString() {
-    return 'HomeState(styles: $styles, selectedStyle: $selectedStyle, nearHouseList: $nearHouseList, bestForYouHouseList: $bestForYouHouseList)';
+    return 'HomeState(styles: $styles, selectedStyle: $selectedStyle, failure: $failure, nearHouseList: $nearHouseList, bestForYouHouseList: $bestForYouHouseList)';
   }
 
   @override
@@ -182,6 +215,7 @@ class _$HomeStateImpl implements _HomeState {
             const DeepCollectionEquality().equals(other._styles, _styles) &&
             (identical(other.selectedStyle, selectedStyle) ||
                 other.selectedStyle == selectedStyle) &&
+            (identical(other.failure, failure) || other.failure == failure) &&
             const DeepCollectionEquality()
                 .equals(other._nearHouseList, _nearHouseList) &&
             const DeepCollectionEquality()
@@ -193,6 +227,7 @@ class _$HomeStateImpl implements _HomeState {
       runtimeType,
       const DeepCollectionEquality().hash(_styles),
       selectedStyle,
+      failure,
       const DeepCollectionEquality().hash(_nearHouseList),
       const DeepCollectionEquality().hash(_bestForYouHouseList));
 
@@ -207,6 +242,7 @@ abstract class _HomeState implements HomeState {
   const factory _HomeState(
           {required final List<String> styles,
           final String? selectedStyle,
+          final Failure? failure,
           required final List<NearHouse> nearHouseList,
           required final List<BestForYouHouse> bestForYouHouseList}) =
       _$HomeStateImpl;
@@ -215,6 +251,8 @@ abstract class _HomeState implements HomeState {
   List<String> get styles;
   @override
   String? get selectedStyle;
+  @override
+  Failure? get failure;
   @override
   List<NearHouse> get nearHouseList;
   @override

@@ -25,7 +25,9 @@ class HomeCubit extends Cubit<HomeState> {
 
   getStyles() async {
     final result = await getHouseTypesUseCase();
-    result.fold((l) => print("error"), (typeList) {
+    result.fold((error) {
+      emit(state.copyWith(failure: error));
+    }, (typeList) {
       emit(state.copyWith(
         styles: typeList,
         selectedStyle: typeList.first,
@@ -35,7 +37,9 @@ class HomeCubit extends Cubit<HomeState> {
 
   getHouseNearYou() async {
     final result = await getHouseNearYouUseCase();
-    result.fold((l) => print("error"), (housesNearYou) {
+    result.fold((error) {
+      emit(state.copyWith(failure: error));
+    }, (housesNearYou) {
       emit(state.copyWith(
         nearHouseList: housesNearYou,
       ));
@@ -44,7 +48,9 @@ class HomeCubit extends Cubit<HomeState> {
 
   getHouseBestForYou() async {
     final result = await getHouseBestForYouUseCase();
-    result.fold((l) => print("error"), (bestForYouHouseList) {
+    result.fold((error) {
+      emit(state.copyWith(failure: error));
+    }, (bestForYouHouseList) {
       emit(state.copyWith(bestForYouHouseList: bestForYouHouseList));
     });
   }
